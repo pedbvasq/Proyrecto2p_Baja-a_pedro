@@ -24,6 +24,7 @@ public class PrincipalProyecto extends Application{
        Parent root = loader.load();
         Scene scene = new Scene(root,600,400);
         stage.setScene(scene);
+        stage.setTitle("Estadisticas Covid-19");
         stage.show();
     }
     
