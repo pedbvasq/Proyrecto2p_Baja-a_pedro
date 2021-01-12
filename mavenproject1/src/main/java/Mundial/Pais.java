@@ -5,47 +5,51 @@
  */
 package Mundial;
 
+import com.poo_espol.mavenproject1.PrincipalProyecto;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
  *
  * @author pedro
  */
-public class Pais implements Comparable {
+public class Pais extends Global implements Comparable<Pais> {
 
     private Continente continente;
-    private String nombre;
-    private int caso;
-    private int muerte;
+
+    public Pais(String nombre, int caso, int muerte, Continente continente) {
+        super(nombre, caso, muerte);
+        this.continente = continente;
+    }
 
     @Override
-    public int compareTo(Object o) {
+    public int compareTo(Pais p) {
         return 0;
 
     }
 
-    public static ArrayList<Pais> listaPa() {
-        return null;
-//        ArrayList<Pais> paises = new ArrayList<>();
-//        for (String i : Archivo.LeeFichero("pais.csv")) {
-//            String lista[] = i.split("|");
-//            for (String j : Archivo.LeeFichero("globales.csv")) {
-//                String list[] = j.split("|");
-//                Pais p = new Pais(new Continente(lista[0]), lista[1], Integer.valueOf(list[1]), Integer.valueOf(list[2]));
-//                paises.add(p);
-//
-//            }
-//
-//        }
-//        return paises;
+    public static ArrayList<Pais> cargarPais(Global g) {
+        ArrayList<Pais> paises = new ArrayList<>();
+        try (BufferedReader bf = new BufferedReader(new FileReader(PrincipalProyecto.filerutes + "paises.csv"))) {
+            String linea;
+            while ((linea = bf.readLine()) != null) {
+                String lista[] = linea.split("\\|");
 
-    }
+                paises.add(new Pais(g.nombre, g.caso, g.muerte, new Continente(lista[0].trim())));
 
-    public Pais(Continente continente, String nombre, int caso, int muerte) {
-        this.continente = continente;
-        this.nombre = nombre;
-        this.caso = caso;
-        this.muerte = muerte;
+            }
+
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return paises;
+
     }
 
     @Override

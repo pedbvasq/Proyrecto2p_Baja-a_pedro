@@ -16,28 +16,27 @@ import java.util.ArrayList;
  *
  * @author pedro
  */
-public class Continente {
+public class Global {
+     protected String nombre;
+    protected int caso;
+    protected int muerte;
 
-    private String nombre;
-
-    public Continente(String nombre) {
+    public Global(String nombre, int caso, int muerte) {
         this.nombre = nombre;
-    }
-
-    @Override
-    public String toString() {
-        return  nombre ;
+        this.caso = caso;
+        this.muerte = muerte;
     }
     
-
-    public static ArrayList<Continente> cargarContinente() {
-       
-        ArrayList<Continente> continentes = new ArrayList<>();
-        try(BufferedReader bf = new BufferedReader(new FileReader(PrincipalProyecto.filerutes+"continentes.txt"))){
+     public static ArrayList<Global> cargarglobal(Global g) {
+        ArrayList<Global> globales = new ArrayList<>();
+        try(BufferedReader bf = new BufferedReader(new FileReader(PrincipalProyecto.filerutes+"globales.csv"))){
             String linea;
             while((linea = bf.readLine())!=null){
-                continentes.add(new Continente(linea.trim()));
-                
+                String lista[] = linea.split("\\|");
+                int c = Integer.valueOf(lista[1].trim());
+                int m = Integer.valueOf(lista[2].trim());
+                globales.add(new Global(lista[0].trim(),c,m));
+                 
             }
             
         } catch (FileNotFoundException ex) {
@@ -46,10 +45,9 @@ public class Continente {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        return continentes;
-        
-      
+         return globales;
+     
 
-    } 
-    
+    }
+     
 }

@@ -46,7 +46,7 @@ Czechia|759635|12257
 Democratic Republic of Congo|18248|599
 Denmark|173433|1420
 Djibouti|5854|61
-Dominica|88|
+Dominica|88|45
 Dominican Republic|175849|2419
 Ecuador|216083|14103
 Egypt|144583|7918
@@ -65,7 +65,7 @@ Georgia|232079|2646
 Germany|1814565|36757
 Ghana|55168|335
 Greece|141453|5051
-Grenada|127|
+Grenada|127|5
 Guatemala|139419|4859
 Guinea|13845|81
 Guinea-Bissau|2455|45
@@ -90,7 +90,7 @@ Kenya|97127|1690
 Kosovo|52333|1355
 Kuwait|152027|938
 Kyrgyzstan|81512|1360
-Laos|41|
+Laos|41|5
 Latvia|43942|722
 Lebanon|195759|1529
 Lesotho|3206|65
@@ -142,7 +142,7 @@ Rwanda|8955|110
 Saint Kitts and Nevis|33|
 Saint Lucia|380|5
 Saint Vincent and the Grenadines|133|
-Samoa|2|
+Samoa|2|5
 San Marino|2549|62
 Sao Tome and Principe|1024|17
 Saudi Arabia|363259|6265
@@ -153,7 +153,7 @@ Sierra Leone|2724|76
 Singapore|58749|29
 Slovakia|191088|2603
 Slovenia|128370|2868
-Solomon Islands|17|
+Solomon Islands|17|5
 Somalia|4714|130
 South Africa|1127759|30524
 South Korea|65818|1027
@@ -169,7 +169,7 @@ Taiwan|817|7
 Tajikistan|13305|90
 Tanzania|509|21
 Thailand|9331|66
-Timor|49|
+Timor|49|0
 Togo|3770|69
 Trinidad and Tobago|7186|127
 Tunisia|147061|4934
@@ -181,8 +181,8 @@ United Kingdom|2782709|76428
 United States|21046195|357258
 Uruguay|22104|217
 Uzbekistan|77295|614
-Vanuatu|1|
-Vatican|27|
+Vanuatu|1|0
+Vatican|27|0
 Venezuela|114662|1042
 Vietnam|1504|35
 World|86405927|1868768
