@@ -5,6 +5,7 @@
  */
 package com.poo_espol.mavenproject1;
 
+import Mundial.Country;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -32,6 +33,15 @@ public class DatoGeneralController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        for(Country g:Country.cargarglobal()){
+            if(g.getNombre().equals("World")){
+                txtcasos.setText(String.valueOf(g.getCaso()));
+                txtmuertes.setText(String.valueOf(g.getMuerte()));
+                
+                
+            }
+            
+        }
     }
     @FXML
     private Label txtcasos;

@@ -16,45 +16,45 @@ import java.util.ArrayList;
  *
  * @author pedro
  */
-public class Pais extends Global implements Comparable<Pais> {
+public class Pais {
 
     private Continente continente;
 
-    public Pais(String nombre, int caso, int muerte, Continente continente) {
-        super(nombre, caso, muerte);
-        this.continente = continente;
-    }
-
-    @Override
-    public int compareTo(Pais p) {
-        return 0;
-
-    }
-
-    public static ArrayList<Pais> cargarPais(Global g) {
-        ArrayList<Pais> paises = new ArrayList<>();
-        try (BufferedReader bf = new BufferedReader(new FileReader(PrincipalProyecto.filerutes + "paises.csv"))) {
-            String linea;
-            while ((linea = bf.readLine()) != null) {
-                String lista[] = linea.split("\\|");
-
-                paises.add(new Pais(g.nombre, g.caso, g.muerte, new Continente(lista[0].trim())));
-
-            }
-
-        } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        return paises;
-
-    }
-
-    @Override
-    public String toString() {
-        return nombre;
-    }
+//    public Pais(String nombre, int caso, int muerte, Continente continente) {
+//        super(nombre, caso, muerte);
+//        this.continente = continente;
+//    }
+//
+//    @Override
+//    public int compareTo(Pais p) {
+//        return 0;
+//
+//    }
+//
+//    public static ArrayList<Pais> cargarPais(Country g) {
+//        ArrayList<Pais> paises = new ArrayList<>();
+//        try (BufferedReader bf = new BufferedReader(new FileReader(PrincipalProyecto.filerutes + "paises.csv"))) {
+//            String linea;
+//            while ((linea = bf.readLine()) != null) {
+//                String lista[] = linea.split("\\|");
+//
+//                paises.add(new Pais(g.nombre, g.caso, g.muerte, new Continente(lista[0].trim())));
+//
+//            }
+//
+//        } catch (FileNotFoundException ex) {
+//            ex.printStackTrace();
+//
+//        } catch (IOException ex) {
+//            ex.printStackTrace();
+//        }
+//        return paises;
+//
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return nombre;
+//    }
 
 }

@@ -42,6 +42,8 @@ public class VentanaPaisOrdenController implements Initializable {
 
     @FXML
     void ordenarPor(ActionEvent e) {
+        String s = comboEleccion.getValue();
+        
 
     }
 
