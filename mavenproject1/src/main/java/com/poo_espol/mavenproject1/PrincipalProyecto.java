@@ -18,7 +18,7 @@ import javafx.stage.Stage;
  */
 public class PrincipalProyecto extends Application{
     public static String filerutes = "src\\main\\resources\\com\\poo_espol\\mavenproject1\\files\\" ;
-    public static String imagesrutes ="src/main/resources/com/poo_espol/mavenproject1/imagenes";
+    public static String imagesrutes ="src\\main\\resources\\com\\poo_espol\\mavenproject1\\Imagenes\\";
     @Override
     public void start(Stage stage) throws Exception {
        FXMLLoader loader = new FXMLLoader(PrincipalProyecto.class.getResource("VentanaDeInicio.fxml"));

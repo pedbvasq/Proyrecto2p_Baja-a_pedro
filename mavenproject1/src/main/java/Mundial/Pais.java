@@ -19,42 +19,54 @@ import java.util.ArrayList;
 public class Pais {
 
     private Continente continente;
+    private String nombre;
 
-//    public Pais(String nombre, int caso, int muerte, Continente continente) {
-//        super(nombre, caso, muerte);
-//        this.continente = continente;
-//    }
-//
-//    @Override
-//    public int compareTo(Pais p) {
-//        return 0;
-//
-//    }
-//
-//    public static ArrayList<Pais> cargarPais(Country g) {
-//        ArrayList<Pais> paises = new ArrayList<>();
-//        try (BufferedReader bf = new BufferedReader(new FileReader(PrincipalProyecto.filerutes + "paises.csv"))) {
-//            String linea;
-//            while ((linea = bf.readLine()) != null) {
-//                String lista[] = linea.split("\\|");
-//
-//                paises.add(new Pais(g.nombre, g.caso, g.muerte, new Continente(lista[0].trim())));
-//
-//            }
-//
-//        } catch (FileNotFoundException ex) {
-//            ex.printStackTrace();
-//
-//        } catch (IOException ex) {
-//            ex.printStackTrace();
-//        }
-//        return paises;
-//
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return nombre;
-//    }
+    public Pais(Continente continente, String nombre) {
+        this.continente = continente;
+        this.nombre = nombre;
+    }
+
+    public Continente getContinente() {
+        return continente;
+    }
+
+    public void setContinente(Continente continente) {
+        this.continente = continente;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public static ArrayList<Pais> listaPaises(){
+          ArrayList<Pais> paises = new ArrayList<>();
+       try (BufferedReader bf = new BufferedReader(new FileReader(PrincipalProyecto.filerutes + "paises.csv"))) {
+            String linea;
+            while ((linea = bf.readLine()) != null) {
+                String lista[] = linea.split("\\|");
+                paises.add(new Pais(new Continente(lista[0].trim()),lista[1]));
+
+            }
+
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+        return paises;
+        
+    }
+
+  
+    @Override
+    public String toString() {
+        return nombre;
+    }
 
 }
