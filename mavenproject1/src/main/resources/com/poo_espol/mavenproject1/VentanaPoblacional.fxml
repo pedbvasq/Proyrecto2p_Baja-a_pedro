@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poo_espol.mavenproject1.VentanaPoblacionalController">
-    
-</AnchorPane>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="242.0" prefWidth="276.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poo_espol.mavenproject1.VentanaPoblacionalController">
+   <children>
+      <Label layoutX="62.0" layoutY="25.0" text="Datos Poblacionales">
+         <font>
+            <Font size="17.0"/>
+         </font>
+      </Label>
+      <Label fx:id="edadP" layoutX="20.0" layoutY="71.0" text="Edad promedio:" />
+      <Label layoutX="171.0" layoutY="71.0" text="Label" />
+      <Label fx:id="vida" layoutX="18.0" layoutY="99.0" text="Esperanza Vida:" />
+      <Label layoutX="171.0" layoutY="99.0" text="Label" />
+      <Label fx:id="pobreza" layoutX="19.0" layoutY="125.0" text="Indice Pobreza:" />
+      <Label layoutX="171.0" layoutY="125.0" text="Label" />
+      <Label fx:id="dPoblacional" layoutX="19.0" layoutY="153.0" text="Densidad Poblacional:" />
+      <Label layoutX="171.0" layoutY="153.0" text="Label" />
+      <Label fx:id="tiempoCerrar" layoutX="124.0" layoutY="185.0" text="Label" />
+      <Button fx:id="txtcerrar" layoutX="112.0" layoutY="205.0" mnemonicParsing="false" onAction="#cerrar" text="Cerrar" />
+   </children>
+</Pane>

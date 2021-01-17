@@ -32,7 +32,7 @@ public class VentanaPoblacionalController implements Initializable {
     }
     private Label edadP;
     @FXML
-    private Label eVida;
+    private Label vida;
     @FXML
     private Label pobreza;
     @FXML
@@ -40,11 +40,11 @@ public class VentanaPoblacionalController implements Initializable {
     @FXML
     private Label tiempoCerrar;
     @FXML
-    private Button btnCerrar;
+    private Button txtcerrar;
 
     @FXML
     void cerrar(ActionEvent e) {
-        Stage s = (Stage) btnCerrar.getScene().getWindow();
+        Stage s = (Stage) txtcerrar.getScene().getWindow();
         s.close();
 
     }

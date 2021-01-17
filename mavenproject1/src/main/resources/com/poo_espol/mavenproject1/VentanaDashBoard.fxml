@@ -46,45 +46,44 @@
       </HBox>
       <Pane prefHeight="275.0" prefWidth="600.0">
          <children>
-            <Label fx:id="timepoApp" layoutX="293.0" layoutY="244.0" text="..." />
             <ImageView fitHeight="123.0" fitWidth="159.0" layoutX="234.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" />
-            <VBox alignment="TOP_CENTER" layoutX="65.0" layoutY="59.0" prefHeight="82.0" prefWidth="114.0" spacing="20.0">
+            <VBox fx:id="vboxCasos" alignment="TOP_CENTER" layoutX="65.0" layoutY="59.0" prefHeight="82.0" prefWidth="114.0" spacing="20.0">
                <children>
-                  <Label fx:id="txtcasos" text="Label" />
-                  <Label fx:id="casos" text="Label" />
+                  <Label fx:id="txtcasos" prefHeight="17.0" prefWidth="92.0" text="." />
+                  <Label fx:id="casos" prefHeight="17.0" prefWidth="99.0" text="." />
                </children>
                <padding>
                   <Insets top="20.0" />
                </padding>
             </VBox>
-            <VBox alignment="TOP_CENTER" layoutX="223.0" layoutY="178.0" prefHeight="60.0" prefWidth="181.0" spacing="20.0">
+            <VBox fx:id="vboxPoblacion" alignment="TOP_CENTER" layoutX="223.0" layoutY="178.0" prefHeight="60.0" prefWidth="181.0" spacing="20.0">
                <children>
-                  <Label fx:id="txtpoblacion" text="Label" />
-                  <Label fx:id="poblacion" text="Label" />
+                  <Label fx:id="txtpoblacion" prefHeight="17.0" prefWidth="99.0" text="." />
+                  <Label fx:id="poblacion" prefHeight="17.0" prefWidth="111.0" text="." />
                </children>
             </VBox>
-            <VBox alignment="TOP_CENTER" layoutX="445.0" layoutY="55.0" prefHeight="91.0" prefWidth="114.0" spacing="20.0">
+            <VBox fx:id="vboxMuerte" alignment="TOP_CENTER" layoutX="445.0" layoutY="55.0" prefHeight="91.0" prefWidth="114.0" spacing="20.0">
                <children>
-                  <Label fx:id="txtmuertes" prefHeight="17.0" prefWidth="33.0" text="Label" />
-                  <Label fx:id="muertes" text="Label" />
-               </children>
-               <padding>
-                  <Insets top="20.0" />
-               </padding>
-            </VBox>
-            <VBox alignment="TOP_CENTER" layoutX="65.0" layoutY="158.0" prefHeight="82.0" prefWidth="114.0" spacing="20.0">
-               <children>
-                  <Label fx:id="txtdias" text="Label" />
-                  <Label fx:id="dias" text="Label" />
+                  <Label fx:id="txtmuertes" prefHeight="17.0" prefWidth="116.0" text="." />
+                  <Label fx:id="muertes" prefHeight="17.0" prefWidth="118.0" text="." />
                </children>
                <padding>
                   <Insets top="20.0" />
                </padding>
             </VBox>
-            <VBox alignment="TOP_CENTER" layoutX="445.0" layoutY="162.0" prefHeight="91.0" prefWidth="114.0" spacing="20.0">
+            <VBox fx:id="vboxCasosDias" alignment="TOP_CENTER" layoutX="65.0" layoutY="158.0" prefHeight="82.0" prefWidth="114.0" spacing="20.0">
                <children>
-                  <Label fx:id="txtMuertedias" text="Label" />
-                  <Label fx:id="diasMuerte" text="Label" />
+                  <Label fx:id="txtdias" prefHeight="17.0" prefWidth="92.0" text="." />
+                  <Label fx:id="dias" prefHeight="17.0" prefWidth="89.0" text="." />
+               </children>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </VBox>
+            <VBox fx:id="vboxMuertePorDia" alignment="TOP_CENTER" layoutX="445.0" layoutY="162.0" prefHeight="91.0" prefWidth="114.0" spacing="20.0">
+               <children>
+                  <Label fx:id="txtMuertedias" prefHeight="17.0" prefWidth="72.0" text="." />
+                  <Label fx:id="diasMuerte" prefHeight="17.0" prefWidth="91.0" text="." />
                </children>
                <padding>
                   <Insets top="20.0" />
@@ -92,6 +91,7 @@
             </VBox>
          </children>
       </Pane>
+      <Label fx:id="timepoApp" prefHeight="17.0" prefWidth="383.0" text="..." />
       <Button fx:id="btnCerrar" mnemonicParsing="false" onAction="#cerrar" text="Cerrar" />
    </children>
 </VBox>

@@ -175,8 +175,7 @@ public class VentanaPaisOrdenController implements Initializable {
                         stage.setScene(scene);
                         stage.showAndWait();
                         
-                        
-                      
+                          
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }
