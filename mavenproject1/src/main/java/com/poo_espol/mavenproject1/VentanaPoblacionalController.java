@@ -29,12 +29,15 @@ public class VentanaPoblacionalController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         starTask();
+        llenarDatos();
+
     }
-    private Label edadP;
     @FXML
-    private Label vida;
+    private  Label edadP;
     @FXML
-    private Label pobreza;
+    private  Label vida;
+    @FXML
+    private  Label pobreza;
     @FXML
     private Label dPoblacion;
     @FXML
@@ -64,8 +67,8 @@ public class VentanaPoblacionalController implements Initializable {
     }
 
     public void runTask() {
-        for (int i = 0; i <= 5; i--) {
-            String status = " Ventana cerrad en Tiempo :" + i + " Segundos";
+        for (int i = 5; i > 0; i--) {
+            String status = " Ventana se cerra en Tiempo :" + i + " Segundos";
             Platform.runLater(new Runnable() {
                 @Override
                 public void run() {
@@ -82,5 +85,12 @@ public class VentanaPoblacionalController implements Initializable {
             }
         }
 
+    }
+
+    public void llenarDatos() {
+        edadP.setText(VentanaDashBoardController.getEd());
+        pobreza.setText(VentanaDashBoardController.getPob());
+        vida.setText(VentanaDashBoardController.getVid());
+        dPoblacion.setText(VentanaDashBoardController.getDen());
     }
 }

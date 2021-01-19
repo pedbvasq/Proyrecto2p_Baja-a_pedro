@@ -5,23 +5,22 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="242.0" prefWidth="276.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poo_espol.mavenproject1.VentanaPoblacionalController">
    <children>
       <Label layoutX="62.0" layoutY="25.0" text="Datos Poblacionales">
          <font>
-            <Font size="17.0"/>
+            <Font size="17.0" />
          </font>
       </Label>
-      <Label fx:id="edadP" layoutX="20.0" layoutY="71.0" text="Edad promedio:" />
-      <Label layoutX="171.0" layoutY="71.0" text="Label" />
-      <Label fx:id="vida" layoutX="18.0" layoutY="99.0" text="Esperanza Vida:" />
-      <Label layoutX="171.0" layoutY="99.0" text="Label" />
-      <Label fx:id="pobreza" layoutX="19.0" layoutY="125.0" text="Indice Pobreza:" />
-      <Label layoutX="171.0" layoutY="125.0" text="Label" />
-      <Label fx:id="dPoblacional" layoutX="19.0" layoutY="153.0" text="Densidad Poblacional:" />
-      <Label layoutX="171.0" layoutY="153.0" text="Label" />
-      <Label fx:id="tiempoCerrar" layoutX="124.0" layoutY="185.0" text="Label" />
+      <Label layoutX="20.0" layoutY="71.0" text="Edad promedio:" />
+      <Label fx:id="edadP" layoutX="171.0" layoutY="71.0" prefHeight="17.0" prefWidth="61.0" text="." />
+      <Label layoutX="18.0" layoutY="99.0" text="Esperanza Vida:" />
+      <Label fx:id="vida" layoutX="171.0" layoutY="99.0" prefHeight="17.0" prefWidth="61.0" text="." />
+      <Label layoutX="19.0" layoutY="125.0" text="Indice Pobreza:" />
+      <Label fx:id="pobreza" layoutX="171.0" layoutY="125.0" prefHeight="17.0" prefWidth="80.0" text="." />
+      <Label layoutX="19.0" layoutY="153.0" text="Densidad Poblacional:" />
+      <Label fx:id="dPoblacion" layoutX="171.0" layoutY="153.0" prefHeight="17.0" prefWidth="61.0" text="." />
+      <Label fx:id="tiempoCerrar" layoutX="124.0" layoutY="185.0" text="." />
       <Button fx:id="txtcerrar" layoutX="112.0" layoutY="205.0" mnemonicParsing="false" onAction="#cerrar" text="Cerrar" />
    </children>
 </Pane>

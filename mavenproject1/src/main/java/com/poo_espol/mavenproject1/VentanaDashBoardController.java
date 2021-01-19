@@ -65,7 +65,7 @@ public class VentanaDashBoardController implements Initializable {
     @FXML
     private ComboBox<Continente> comboConti;
     @FXML
-    private ComboBox<Pais> comboPais;
+    private  ComboBox<Pais> comboPais;  
     @FXML
     private DatePicker fecha;
     @FXML
@@ -96,6 +96,43 @@ public class VentanaDashBoardController implements Initializable {
     private Label diasMuerte;
     @FXML
     private Button btnCerrar;
+    private static String pob;
+    private static String vid;
+    private static String ed;
+    private static String den;
+
+    public static void setPob(String pob) {
+        VentanaDashBoardController.pob = pob;
+    }
+
+    public static void setVid(String vid) {
+        VentanaDashBoardController.vid = vid;
+    }
+
+    public static void setEd(String ed) {
+        VentanaDashBoardController.ed = ed;
+    }
+
+    public static void setDen(String den) {
+        VentanaDashBoardController.den = den;
+    }
+
+    public static String getDen() {
+        return den;
+    }
+
+    public static String getPob() {
+        return pob;
+    }
+
+    public static String getVid() {
+        return vid;
+    }
+
+    public static String getEd() {
+        return ed;
+    }
+    
 
     @FXML
     void consultarAccion(ActionEvent e) {
@@ -122,7 +159,11 @@ public class VentanaDashBoardController implements Initializable {
                     txtpoblacion.setStyle("-fx-background-color:blue");
                     txtmuertes.setStyle("-fx-background-color:blue");
                     txtcasos.setStyle("-fx-background-color:blue");
-
+                    pob = lista[11].trim();
+                    vid = lista[12].trim();
+                    den = lista[9].trim();
+                    ed =lista[10].trim();
+                 
                 }
 
             }
@@ -194,7 +235,7 @@ public class VentanaDashBoardController implements Initializable {
 
     }
 
-    public ArrayList<String[]> datosCovid() {
+    public static ArrayList<String[]> datosCovid() {
         ArrayList<String[]> listaCovid = new ArrayList<>();
         try (BufferedReader bf = new BufferedReader(new FileReader(PrincipalProyecto.filerutes + "owid-covid-data_.csv"))) {
             String linea;
