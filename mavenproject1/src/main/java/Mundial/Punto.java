@@ -11,6 +11,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -23,7 +24,7 @@ import javafx.scene.layout.Pane;
  *
  * @author pedro
  */
-public class Punto {
+public class Punto implements Serializable{
 
     private double coordenadaX;
     private double coordenadaY;
@@ -70,8 +71,6 @@ public class Punto {
             while ((linea = bf.readLine()) != null) {
                 String lista[] = linea.trim().split("-");
                 coordenadas.add(new Punto(Double.valueOf(lista[0]), Double.valueOf(lista[1])));
- 
-
             }
 
         } catch (FileNotFoundException ex) {
@@ -82,6 +81,11 @@ public class Punto {
         }
         return coordenadas;
 
+    }
+
+    @Override
+    public String toString() {
+        return "Punto{" + "coordenadaX=" + coordenadaX + ", coordenadaY=" + coordenadaY + '}';
     }
 
     

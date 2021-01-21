@@ -7,9 +7,11 @@ package com.poo_espol.mavenproject1;
 
 import Mundial.Punto;
 import java.io.BufferedWriter;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.net.URL;
@@ -40,14 +42,16 @@ public class ConfirmacionController implements Initializable {
     private Button btnCancelar;
 
     @FXML
-    void cancelar(ActionEvent e) {
+    void cerrar(ActionEvent e) {
+        System.out.println("cerrando");
         Stage s = (Stage) btnCancelar.getScene().getWindow();
         s.close();
 
     }
 
     @FXML
-    void registroUbi(ActionEvent e) {
+    void registrarUbi(ActionEvent e) throws IOException {
+        System.out.println("guardando");
         FileWriter fichero = null;
         BufferedWriter bw = null;
         PrintWriter pw = null;
@@ -56,7 +60,6 @@ public class ConfirmacionController implements Initializable {
             fichero = new FileWriter(PrincipalProyecto.filerutes + "lugares.txt", true);
             bw = new BufferedWriter(fichero);
             bw.write(linea + "\n");
-            VentanaMapaController.getConteo().setText("UBICACION REGISTRADA");
 
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -71,14 +74,15 @@ public class ConfirmacionController implements Initializable {
             }
 
         }
-        try (ObjectOutputStream objStrm = new ObjectOutputStream(new FileOutputStream("registros.txt", true));) {
+        try (ObjectOutputStream objStrm = new ObjectOutputStream(new FileOutputStream("LugarRegistro.bin", true));) {
             Punto p = new Punto(VentanaMapaController.getPosicionX(), VentanaMapaController.getPosicionY());
             objStrm.writeObject(p);
+            System.out.println(p);
 
         } catch (IOException ed) {
-            System.out.println("Exception during serialization" + e);
+            System.out.println(ed.getMessage());
 
         }
-
+        
     }
 }

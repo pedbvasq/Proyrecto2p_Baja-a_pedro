@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="170.0" prefWidth="385.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poo_espol.mavenproject1.VentanaDashBoardController">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="170.0" prefWidth="385.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poo_espol.mavenproject1.ConfirmacionController">
    <children>
       <Label text="Confirmacion" textFill="#d30e0e">
          <font>
@@ -18,19 +17,19 @@
       <Label prefHeight="23.0" prefWidth="358.0" text="    Si en este momento se encuentra con un diagnostico positivo " />
       <Label text="de covid-19 registre su ubicacion para que otros usuarios" />
       <Label text=" para su seguridad" />
-      <Label text="¿Desea regstrar su ubcacion?">
+      <Label text="¿Desea registrar su ubcacion?">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
       <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
          <children>
-            <Button fx:id="registrar" mnemonicParsing="false" onAction="#registroUbi" style="-fx-background-color: blue;" text="Registrar">
+            <Button fx:id="registrar" mnemonicParsing="false" onAction="#registrarUbi" style="-fx-background-color: blue;" text="Registrar">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#cancelar" style="-fx-background-color: blue;" text="Cancelar">
+            <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#cerrar" style="-fx-background-color: blue;" text="Cancelar">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

@@ -29,10 +29,6 @@
             <Font name="System Bold" size="11.0" />
          </font>
       </Button>
-      <Label fx:id="conteo" layoutX="525.0" layoutY="399.0" prefHeight="10.0" prefWidth="114.0" textFill="#970a0a">
-         <font>
-            <Font name="System Bold Italic" size="16.0" />
-         </font>
-      </Label>
+      <Label fx:id="conteo" layoutX="497.0" layoutY="402.0" prefHeight="17.0" prefWidth="186.0" text="." />
    </children>
 </Pane>

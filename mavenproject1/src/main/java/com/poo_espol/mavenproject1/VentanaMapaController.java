@@ -42,7 +42,7 @@ public class VentanaMapaController implements Initializable {
         // TODO
     }
     @FXML
-    private static Label conteo;
+    private Label conteo;
     @FXML
     private ImageView mapa;
     @FXML
@@ -53,14 +53,6 @@ public class VentanaMapaController implements Initializable {
     private Pane rootMapa;
     private static double posicionX;
     private static double posicionY;
-
-    public static Label getConteo() {
-        return conteo;
-    }
-
-    public static void setConteo(Label conteo) {
-        VentanaMapaController.conteo = conteo;
-    }
 
     public static double getPosicionX() {
         return posicionX;
@@ -95,8 +87,7 @@ public class VentanaMapaController implements Initializable {
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setScene(scene);
             stage.showAndWait();
-            
-            
+
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -151,19 +142,23 @@ public class VentanaMapaController implements Initializable {
                 @Override
                 public void run() {
                     int ct = 0;
+                    ct++;
                     String status;
+                    status = ct + " contagiados cerca";
+
+                    conteo.setText(status);
+
                     ImageView img = null;
                     if (p.distancia(new Punto(posicionX, posicionY))) {
 
                         try (FileInputStream imput = new FileInputStream(PrincipalProyecto.imagesrutes + "UbicacionContagio.png")) {
-                            ct++;
-                            status = ct + " contagiados cerca";
+
                             Image image = new Image(imput, 30, 30, false, false);
                             img = new ImageView(image);
                             img.setLayoutX(p.getCoordenadaX());
                             img.setLayoutY(p.getCoordenadaY());
                             rootMapa.getChildren().add(img);
-                            conteo.setText(status);
+
                         } catch (FileNotFoundException ex) {
                             System.out.println(ex.getMessage());
                         } catch (IOException ex) {
@@ -174,8 +169,10 @@ public class VentanaMapaController implements Initializable {
 
                 }
             });
+
             try {
                 Thread.sleep(100);
+
             } catch (InterruptedException ex) {
                 ex.printStackTrace();
             }
