@@ -81,27 +81,29 @@ public class VentanaPaisOrdenController implements Initializable {
             Collections.sort(paises);
             ImageView img = null;
             for (int i = 1; i < 11; i++) {
-                try (FileInputStream imput = new FileInputStream(PrincipalProyecto.imagesrutes + paises.get(i).getNombre())) {
-                    Image image = new Image(imput);
+                HBox lista = new HBox();
+                Label lb1 = new Label(paises.get(i).getNombre());
+                Label lb2 = new Label(String.valueOf(paises.get(i).getCaso()));
+                Label lb3 = new Label(String.valueOf(paises.get(i).getMuerte()));
+                lb1.setAlignment(Pos.CENTER);
+                lb2.setAlignment(Pos.CENTER);
+                lb3.setAlignment(Pos.CENTER);
+                lista.setAlignment(Pos.CENTER);
+                lista.setPadding(new Insets(2, 0, 0, 0));
+                lista.setSpacing(100);
+                informacion.setAlignment(Pos.CENTER);
+                informacion.setSpacing(10);
+                try (FileInputStream imput = new FileInputStream(PrincipalProyecto.imagesrutes + paises.get(i).getNombre() + ".jpg")) {
+                    Image image = new Image(imput, 77, 51, false, false);
                     img = new ImageView(image);
+                    lista.getChildren().addAll(img, lb1, lb2, lb3);
+                    informacion.getChildren().addAll(lista);
 
                 } catch (FileNotFoundException ex) {
                     System.out.println(ex.getMessage());
                 } catch (IOException ex) {
                     System.out.println(ex.getMessage());
                 }
-
-                HBox lista = new HBox();
-                Label lb1 = new Label(paises.get(i).getNombre());
-                Label lb2 = new Label(String.valueOf(paises.get(i).getCaso()));
-                Label lb3 = new Label(String.valueOf(paises.get(i).getMuerte()));
-                lista.getChildren().addAll(lb1, lb2, lb3);
-                lista.setAlignment(Pos.CENTER);
-                lista.setPadding(new Insets(20, 0, 0, 0));
-                lista.setSpacing(100);
-                informacion.setSpacing(10);
-                informacion.getChildren().addAll(lista);
-                informacion.setAlignment(Pos.CENTER);
 
             }
             Button consultaDetallada = new Button();
@@ -120,7 +122,6 @@ public class VentanaPaisOrdenController implements Initializable {
                         stage.initModality(Modality.APPLICATION_MODAL);
                         stage.setScene(scene);
                         stage.showAndWait();
-                        
 
                     } catch (IOException ex) {
                         ex.printStackTrace();
@@ -133,28 +134,30 @@ public class VentanaPaisOrdenController implements Initializable {
             ArrayList<Country> paises = Country.cargarglobal();
             Collections.sort(paises, new ComparadorPais());
             ImageView img = null;
-            for (int i = 1; i < 10; i++) {
-                try (FileInputStream imput = new FileInputStream(PrincipalProyecto.imagesrutes + paises.get(i).getNombre())) {
-                    Image image = new Image(imput);
+            for (int i = 1; i < 11; i++) {
+                HBox lista = new HBox();
+                Label lb1 = new Label(paises.get(i).getNombre());
+                Label lb2 = new Label(String.valueOf(paises.get(i).getCaso()));
+                Label lb3 = new Label(String.valueOf(paises.get(i).getMuerte()));
+                lb1.setAlignment(Pos.CENTER);
+                lb2.setAlignment(Pos.CENTER);
+                lb3.setAlignment(Pos.CENTER);
+                lista.setAlignment(Pos.CENTER);
+                lista.setPadding(new Insets(2, 0, 0, 0));
+                lista.setSpacing(100);
+                informacion.setAlignment(Pos.CENTER);
+                informacion.setSpacing(10);
+                try (FileInputStream imput = new FileInputStream(PrincipalProyecto.imagesrutes + paises.get(i).getNombre() + ".jpg")) {
+                    Image image = new Image(imput, 77, 51, false, false);
                     img = new ImageView(image);
+                    lista.getChildren().addAll(img, lb1, lb2, lb3);
+                    informacion.getChildren().addAll(lista);
 
                 } catch (FileNotFoundException ex) {
                     System.out.println(ex.getMessage());
                 } catch (IOException ex) {
                     System.out.println(ex.getMessage());
                 }
-                HBox lista = new HBox();
-
-                Label lb1 = new Label(paises.get(i).getNombre());
-                Label lb2 = new Label(String.valueOf(paises.get(i).getCaso()));
-                Label lb3 = new Label(String.valueOf(paises.get(i).getMuerte()));
-                lista.getChildren().addAll(lb1, lb2, lb3);
-                lista.setAlignment(Pos.CENTER);
-                lista.setPadding(new Insets(20, 0, 0, 0));
-                lista.setSpacing(100);
-                informacion.setAlignment(Pos.CENTER);
-                informacion.setSpacing(10);
-                informacion.getChildren().addAll(lista);
 
             }
             Button consultaDetallada = new Button();
@@ -174,8 +177,7 @@ public class VentanaPaisOrdenController implements Initializable {
                         stage.initModality(Modality.APPLICATION_MODAL);
                         stage.setScene(scene);
                         stage.showAndWait();
-                        
-                          
+
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }
@@ -185,7 +187,5 @@ public class VentanaPaisOrdenController implements Initializable {
         }
 
     }
-      
-    
-    
+
 }
