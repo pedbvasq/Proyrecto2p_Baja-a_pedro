@@ -23,6 +23,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
 import javafx.scene.Scene;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
@@ -31,6 +32,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.scene.layout.VBox;
@@ -56,8 +58,6 @@ public class VentanaPaisOrdenController implements Initializable {
     @FXML
     private ComboBox<String> comboEleccion;
     @FXML
-    private VBox rootConsultaPais;
-    @FXML
     private Label a1;
     @FXML
     private Label a2;
@@ -68,7 +68,6 @@ public class VentanaPaisOrdenController implements Initializable {
 
     @FXML
     void ordenarPor(ActionEvent e) {
-
         String s = comboEleccion.getValue();
         a1.setText("Paises");
         a2.setText("Total casos");
@@ -92,9 +91,9 @@ public class VentanaPaisOrdenController implements Initializable {
                 lista.setPadding(new Insets(2, 0, 0, 0));
                 lista.setSpacing(100);
                 informacion.setAlignment(Pos.CENTER);
-                informacion.setSpacing(10);
+                informacion.setSpacing(2);
                 try (FileInputStream imput = new FileInputStream(PrincipalProyecto.imagesrutes + paises.get(i).getNombre() + ".jpg")) {
-                    Image image = new Image(imput, 77, 51, false, false);
+                    Image image = new Image(imput, 40, 40, false, false);
                     img = new ImageView(image);
                     lista.getChildren().addAll(img, lb1, lb2, lb3);
                     informacion.getChildren().addAll(lista);
@@ -148,9 +147,9 @@ public class VentanaPaisOrdenController implements Initializable {
                 lista.setPadding(new Insets(2, 0, 0, 0));
                 lista.setSpacing(100);
                 informacion.setAlignment(Pos.CENTER);
-                informacion.setSpacing(10);
+                informacion.setSpacing(2);
                 try (FileInputStream imput = new FileInputStream(PrincipalProyecto.imagesrutes + paises.get(i).getNombre() + ".jpg")) {
-                    Image image = new Image(imput, 77, 51, false, false);
+                    Image image = new Image(imput, 40, 40, false, false);
                     img = new ImageView(image);
                     lista.getChildren().addAll(img, lb1, lb2, lb3);
                     informacion.getChildren().addAll(lista);
@@ -172,7 +171,8 @@ public class VentanaPaisOrdenController implements Initializable {
                 public void handle(ActionEvent t) {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("VentanaDashBoard.fxml"));
                     try {
-
+                        Stage s = (Stage) consultaDetallada.getScene().getWindow();
+                        s.close();
                         Parent root = loader.load();
                         VentanaDashBoardController controlador = loader.getController();
                         Scene scene = new Scene(root);
