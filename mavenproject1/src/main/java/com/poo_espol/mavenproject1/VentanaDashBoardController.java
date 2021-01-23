@@ -9,6 +9,7 @@ import Mundial.Continente;
 import Mundial.Country;
 import Mundial.Pais;
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -29,6 +30,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
@@ -65,7 +68,7 @@ public class VentanaDashBoardController implements Initializable {
     @FXML
     private ComboBox<Continente> comboConti;
     @FXML
-    private  ComboBox<Pais> comboPais;  
+    private ComboBox<Pais> comboPais;
     @FXML
     private DatePicker fecha;
     @FXML
@@ -96,6 +99,8 @@ public class VentanaDashBoardController implements Initializable {
     private Label diasMuerte;
     @FXML
     private Button btnCerrar;
+    @FXML
+    private ImageView mapa;
     private static String pob;
     private static String vid;
     private static String ed;
@@ -132,7 +137,6 @@ public class VentanaDashBoardController implements Initializable {
     public static String getEd() {
         return ed;
     }
-    
 
     @FXML
     void consultarAccion(ActionEvent e) {
@@ -162,8 +166,24 @@ public class VentanaDashBoardController implements Initializable {
                     pob = lista[11].trim();
                     vid = lista[12].trim();
                     den = lista[9].trim();
-                    ed =lista[10].trim();
-                 
+                    ed = lista[10].trim();
+                    try (FileInputStream imput = new FileInputStream(PrincipalProyecto.imagesrutes + p.getNombre() + "Mapa.jpg")) {
+                        Image image = new Image(imput, 77, 51, false, false);
+                        mapa.setImage(image);
+
+                    } catch (FileNotFoundException ex) {
+                        try (FileInputStream imput = new FileInputStream(PrincipalProyecto.imagesrutes + "notFound.jpg")) {
+                            Image image = new Image(imput, 77, 51, false, false);
+                            mapa.setImage(image);
+                        } catch (IOException ex1) {
+                            ex1.printStackTrace();
+                  
+                        }
+
+                    } catch (IOException ex) {
+                        System.out.println(ex.getMessage());
+                    }
+
                 }
 
             }

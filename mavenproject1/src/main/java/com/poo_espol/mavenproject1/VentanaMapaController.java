@@ -51,6 +51,10 @@ public class VentanaMapaController implements Initializable {
     private Button btcerrarUbi;
     @FXML
     private Pane rootMapa;
+  
+
+    
+    
     private static double posicionX;
     private static double posicionY;
 
@@ -100,6 +104,8 @@ public class VentanaMapaController implements Initializable {
      */
     @FXML
     void mapaClick(MouseEvent e) {
+        rootMapa.getChildren().clear();
+        System.out.println();
         posicionX = e.getX();
         posicionY = e.getY();
         ImageView img = null;
@@ -117,6 +123,7 @@ public class VentanaMapaController implements Initializable {
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
+        
 
     }
 
@@ -141,13 +148,6 @@ public class VentanaMapaController implements Initializable {
             Platform.runLater(new Runnable() {
                 @Override
                 public void run() {
-                    int ct = 0;
-                    ct++;
-                    String status;
-                    status = ct + " contagiados cerca";
-
-                    conteo.setText(status);
-
                     ImageView img = null;
                     if (p.distancia(new Punto(posicionX, posicionY))) {
 

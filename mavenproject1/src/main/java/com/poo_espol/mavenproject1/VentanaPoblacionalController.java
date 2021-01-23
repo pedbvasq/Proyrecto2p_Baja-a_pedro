@@ -33,11 +33,11 @@ public class VentanaPoblacionalController implements Initializable {
 
     }
     @FXML
-    private  Label edadP;
+    private Label edadP;
     @FXML
-    private  Label vida;
+    private Label vida;
     @FXML
-    private  Label pobreza;
+    private Label pobreza;
     @FXML
     private Label dPoblacion;
     @FXML
@@ -83,6 +83,8 @@ public class VentanaPoblacionalController implements Initializable {
             } catch (InterruptedException ex) {
                 ex.printStackTrace();
             }
+            Stage s = (Stage) txtcerrar.getScene().getWindow();
+            s.close();
         }
 
     }

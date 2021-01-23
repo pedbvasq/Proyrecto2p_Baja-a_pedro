@@ -46,7 +46,7 @@
       </HBox>
       <Pane prefHeight="275.0" prefWidth="600.0">
          <children>
-            <ImageView fitHeight="123.0" fitWidth="159.0" layoutX="234.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="mapa" fitHeight="123.0" fitWidth="159.0" layoutX="234.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" />
             <VBox fx:id="vboxCasos" alignment="TOP_CENTER" layoutX="65.0" layoutY="59.0" prefHeight="82.0" prefWidth="114.0" spacing="20.0">
                <children>
                   <Label fx:id="txtcasos" prefHeight="17.0" prefWidth="92.0" text="." />

@@ -115,6 +115,8 @@ public class VentanaPaisOrdenController implements Initializable {
                 public void handle(ActionEvent t) {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("VentanaDashBoard.fxml"));
                     try {
+                        Stage s = (Stage) consultaDetallada.getScene().getWindow();
+                        s.close();
                         Parent root = loader.load();
                         VentanaDashBoardController controlador = loader.getController();
                         Scene scene = new Scene(root);
@@ -170,6 +172,7 @@ public class VentanaPaisOrdenController implements Initializable {
                 public void handle(ActionEvent t) {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("VentanaDashBoard.fxml"));
                     try {
+
                         Parent root = loader.load();
                         VentanaDashBoardController controlador = loader.getController();
                         Scene scene = new Scene(root);
