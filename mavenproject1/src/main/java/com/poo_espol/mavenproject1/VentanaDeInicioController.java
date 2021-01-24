@@ -27,16 +27,30 @@ public class VentanaDeInicioController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
     
+    /**
+     *
+     */
     @FXML
     private Button consultaMundial;
+
+    /**
+     *
+     */
     @FXML
     private Button consultaZona;
+
+    /**
+     *
+     * @param e
+     */
     @FXML
     void zonaControl(ActionEvent e){
         FXMLLoader loader = new FXMLLoader(getClass().getResource("VentanaMapa.fxml"));
@@ -57,6 +71,11 @@ public class VentanaDeInicioController implements Initializable {
         
         
     }
+
+    /**
+     *
+     * @param e
+     */
     @FXML
     void datosMundialControl(ActionEvent e){
         FXMLLoader loader = new FXMLLoader(getClass().getResource("DatoGeneral.fxml"));

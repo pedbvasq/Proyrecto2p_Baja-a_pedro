@@ -11,7 +11,7 @@
    <children>
       <ImageView fx:id="mapa" fitHeight="600.0" fitWidth="680.0" layoutX="-12.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Imagenes/mapaguayaquil.png" />
+            <Image url="@mapaguayaquil.png" />
          </image>
       </ImageView>
       <Label layoutX="230.0" layoutY="22.0" text="Consulta por tu Ubicación" textFill="#970a0a">

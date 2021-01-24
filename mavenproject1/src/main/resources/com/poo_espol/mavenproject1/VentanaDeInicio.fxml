@@ -10,12 +10,11 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poo_espol.mavenproject1.VentanaDeInicioController">
    <children>
       <ImageView fitHeight="396.0" fitWidth="593.0" layoutX="4.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Imagenes/c.png" />
+            <Image url="@c.png" />
          </image>
       </ImageView>
       <Button fx:id="consultaZona" layoutX="55.0" layoutY="221.0" mnemonicParsing="false" onAction="#zonaControl" prefHeight="25.0" prefWidth="205.0" text="Consulta tu zona">

@@ -26,33 +26,63 @@ import javafx.scene.layout.Pane;
  */
 public class Punto implements Serializable{
 
+    /**
+     *
+     */
     private double coordenadaX;
+
+    /**
+     *
+     */
     private double coordenadaY;
 
+    /**
+     *
+     * @return
+     */
     public double getCoordenadaX() {
         return coordenadaX;
     }
 
+    /**
+     *
+     * @param coordenadaX
+     */
     public void setCoordenadaX(double coordenadaX) {
         this.coordenadaX = coordenadaX;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getCoordenadaY() {
         return coordenadaY;
     }
 
+    /**
+     *
+     * @param coordenadaY
+     */
     public void setCoordenadaY(double coordenadaY) {
         this.coordenadaY = coordenadaY;
     }
     
-
+    /**
+     *
+     * @param coordenadaX
+     * @param coordenadaY
+     */
     public Punto(double coordenadaX, double coordenadaY) {
         this.coordenadaX = coordenadaX;
         this.coordenadaY = coordenadaY;
     }
 
-
-
+    /**
+     *
+     * @param p2
+     * @return
+     */
     public boolean distancia(Punto p2) {
         double formulaDistancia = Math.sqrt(Math.pow(p2.coordenadaX - coordenadaX, 2) + Math.pow(p2.coordenadaY - coordenadaY, 2));
         if (formulaDistancia <= 100) {
@@ -64,6 +94,10 @@ public class Punto implements Serializable{
 
     }
 
+    /**
+     *
+     * @return
+     */
     public static ArrayList<Punto> listaLugares() {
         ArrayList<Punto> coordenadas = new ArrayList<>();
         try (BufferedReader bf = new BufferedReader(new FileReader(PrincipalProyecto.filerutes + "lugares.txt"))) {

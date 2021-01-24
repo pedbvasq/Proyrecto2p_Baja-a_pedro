@@ -13,9 +13,11 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -24,6 +26,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -36,50 +39,100 @@ public class VentanaMapaController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
+
+    /**
+     *
+     */
     @FXML
     private Label conteo;
+
+    /**
+     *
+     */
     @FXML
     private ImageView mapa;
+
+    /**
+     *
+     */
     @FXML
     private Button btubicacion;
+
+    /**
+     *
+     */
     @FXML
     private Button btcerrarUbi;
+
+    /**
+     *
+     */
     @FXML
     private Pane rootMapa;
-  
 
-    
-    
+    /**
+     *
+     */
     private static double posicionX;
+
+    /**
+     *
+     */
     private static double posicionY;
 
+    /**
+     *
+     * @return
+     */
     public static double getPosicionX() {
         return posicionX;
     }
 
+    /**
+     *
+     * @param posicionX
+     */
     public static void setPosicionX(double posicionX) {
         VentanaMapaController.posicionX = posicionX;
     }
 
+    /**
+     *
+     * @return
+     */
     public static double getPosicionY() {
         return posicionY;
     }
 
+    /**
+     *
+     * @param posicionY
+     */
     public static void setPosicionY(double posicionY) {
         VentanaMapaController.posicionY = posicionY;
     }
 
+    /**
+     *
+     * @param e
+     */
     @FXML
     void cerrarUbicacion(ActionEvent e) {
         Stage s = (Stage) btcerrarUbi.getScene().getWindow();
         s.close();
     }
 
+    /**
+     *
+     * @param e
+     */
     @FXML
     void registrarUbicacion(ActionEvent e) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Confirmacion.fxml"));
@@ -93,7 +146,7 @@ public class VentanaMapaController implements Initializable {
             stage.showAndWait();
 
         } catch (IOException ex) {
-            ex.printStackTrace();
+            PrincipalProyecto.error();
         }
 
     }
@@ -110,7 +163,7 @@ public class VentanaMapaController implements Initializable {
         posicionY = e.getY();
         ImageView img = null;
 
-        try (FileInputStream imput = new FileInputStream(PrincipalProyecto.imagesrutes + "UbicacionUsuario.jpg")) {
+        try (FileInputStream imput = new FileInputStream(PrincipalProyecto.imagesrutes + "ubicacionUsuario.jpg")) {
             Image image = new Image(imput, 30, 30, false, false);
             img = new ImageView(image);
             img.setLayoutX(posicionX);
@@ -119,14 +172,20 @@ public class VentanaMapaController implements Initializable {
             starTask();
 
         } catch (FileNotFoundException ex) {
-            System.out.println(ex.getMessage());
+            PrincipalProyecto.error();
+           
+            
+
         } catch (IOException ex) {
-            System.out.println(ex.getMessage());
+            PrincipalProyecto.error();
+
         }
-        
 
     }
 
+    /**
+     *
+     */
     public void starTask() {
         Thread restarTiempo = new Thread(new Runnable() {
             @Override
@@ -141,6 +200,9 @@ public class VentanaMapaController implements Initializable {
 
     }
 
+    /**
+     *
+     */
     public void runTask() {
 
         for (Punto p : Punto.listaLugares()) {
@@ -160,9 +222,9 @@ public class VentanaMapaController implements Initializable {
                             rootMapa.getChildren().add(img);
 
                         } catch (FileNotFoundException ex) {
-                            System.out.println(ex.getMessage());
+                            PrincipalProyecto.error();
                         } catch (IOException ex) {
-                            System.out.println(ex.getMessage());
+                           PrincipalProyecto.error();
                         }
 
                     }

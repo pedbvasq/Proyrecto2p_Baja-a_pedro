@@ -24,6 +24,8 @@ public class VentanaPoblacionalController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -32,19 +34,47 @@ public class VentanaPoblacionalController implements Initializable {
         llenarDatos();
 
     }
+
+    /**
+     *
+     */
     @FXML
     private Label edadP;
+
+    /**
+     *
+     */
     @FXML
     private Label vida;
+
+    /**
+     *
+     */
     @FXML
     private Label pobreza;
+
+    /**
+     *
+     */
     @FXML
     private Label dPoblacion;
+
+    /**
+     *
+     */
     @FXML
     private Label tiempoCerrar;
+
+    /**
+     *
+     */
     @FXML
     private Button txtcerrar;
 
+    /**
+     *
+     * @param e
+     */
     @FXML
     void cerrar(ActionEvent e) {
         Stage s = (Stage) txtcerrar.getScene().getWindow();
@@ -52,6 +82,9 @@ public class VentanaPoblacionalController implements Initializable {
 
     }
 
+    /**
+     *
+     */
     public void starTask() {
         Thread restarTiempo = new Thread(new Runnable() {
             @Override
@@ -66,6 +99,9 @@ public class VentanaPoblacionalController implements Initializable {
 
     }
 
+    /**
+     *
+     */
     public void runTask() {
         for (int i = 5; i > 0; i--) {
             String status = " Ventana se cerra en Tiempo :" + i + " Segundos";
@@ -83,12 +119,13 @@ public class VentanaPoblacionalController implements Initializable {
             } catch (InterruptedException ex) {
                 ex.printStackTrace();
             }
-            Stage s = (Stage) txtcerrar.getScene().getWindow();
-            s.close();
         }
 
     }
 
+    /**
+     *
+     */
     public void llenarDatos() {
         edadP.setText(VentanaDashBoardController.getEd());
         pobreza.setText(VentanaDashBoardController.getPob());

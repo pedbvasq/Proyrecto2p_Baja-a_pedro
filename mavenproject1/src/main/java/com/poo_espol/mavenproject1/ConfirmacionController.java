@@ -31,16 +31,30 @@ public class ConfirmacionController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
+
+    /**
+     *
+     */
     @FXML
     private Button registrar;
+
+    /**
+     *
+     */
     @FXML
     private Button btnCancelar;
 
+    /**
+     *
+     * @param e
+     */
     @FXML
     void cerrar(ActionEvent e) {
         System.out.println("cerrando");
@@ -49,6 +63,11 @@ public class ConfirmacionController implements Initializable {
 
     }
 
+    /**
+     *
+     * @param e
+     * @throws IOException
+     */
     @FXML
     void registrarUbi(ActionEvent e) throws IOException {
         System.out.println("guardando");
@@ -80,7 +99,7 @@ public class ConfirmacionController implements Initializable {
             System.out.println(p);
 
         } catch (IOException ed) {
-            System.out.println(ed.getMessage());
+           
 
         }
         

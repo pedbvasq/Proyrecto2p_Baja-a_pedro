@@ -21,7 +21,7 @@
       <HBox prefHeight="36.0" prefWidth="600.0" spacing="10.0">
          <children>
             <Label text="Continente  : " />
-            <ComboBox fx:id="comboConti" onAction="#continenteAccion" prefWidth="150.0" promptText="..." />
+            <ComboBox fx:id="comboConti" onAction="#continenteAccion" prefWidth="150.0" />
             <Label prefHeight="17.0" prefWidth="35.0" />
             <Label prefHeight="17.0" prefWidth="80.0" text="Pais:" />
             <ComboBox fx:id="comboPais" onAction="#paisEleccion" prefWidth="150.0" />

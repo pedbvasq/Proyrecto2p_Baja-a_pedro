@@ -47,6 +47,8 @@ public class VentanaPaisOrdenController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -55,17 +57,40 @@ public class VentanaPaisOrdenController implements Initializable {
 
     }
 
+    /**
+     *
+     */
     @FXML
     private ComboBox<String> comboEleccion;
+
+    /**
+     *
+     */
     @FXML
     private Label a1;
+
+    /**
+     *
+     */
     @FXML
     private Label a2;
+
+    /**
+     *
+     */
     @FXML
     private Label a3;
+
+    /**
+     *
+     */
     @FXML
     private VBox informacion;
 
+    /**
+     *
+     * @param e
+     */
     @FXML
     void ordenarPor(ActionEvent e) {
         String s = comboEleccion.getValue();
@@ -155,9 +180,9 @@ public class VentanaPaisOrdenController implements Initializable {
                     informacion.getChildren().addAll(lista);
 
                 } catch (FileNotFoundException ex) {
-                    System.out.println(ex.getMessage());
+                    PrincipalProyecto.error();
                 } catch (IOException ex) {
-                    System.out.println(ex.getMessage());
+                    PrincipalProyecto.error();
                 }
 
             }
@@ -171,8 +196,6 @@ public class VentanaPaisOrdenController implements Initializable {
                 public void handle(ActionEvent t) {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("VentanaDashBoard.fxml"));
                     try {
-                        Stage s = (Stage) consultaDetallada.getScene().getWindow();
-                        s.close();
                         Parent root = loader.load();
                         VentanaDashBoardController controlador = loader.getController();
                         Scene scene = new Scene(root);
@@ -182,7 +205,7 @@ public class VentanaPaisOrdenController implements Initializable {
                         stage.showAndWait();
 
                     } catch (IOException ex) {
-                        ex.printStackTrace();
+                     
                     }
                 }
             });

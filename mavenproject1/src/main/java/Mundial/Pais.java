@@ -18,30 +18,62 @@ import java.util.ArrayList;
  */
 public class Pais {
 
+    /**
+     *
+     */
     private Continente continente;
+
+    /**
+     *
+     */
     private String nombre;
 
+    /**
+     *
+     * @param continente
+     * @param nombre
+     */
     public Pais(Continente continente, String nombre) {
         this.continente = continente;
         this.nombre = nombre;
     }
 
+    /**
+     *
+     * @return
+     */
     public Continente getContinente() {
         return continente;
     }
 
+    /**
+     *
+     * @param continente
+     */
     public void setContinente(Continente continente) {
         this.continente = continente;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     *
+     * @param nombre
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    /**
+     *
+     * @return
+     */
     public static ArrayList<Pais> listaPaises(){
           ArrayList<Pais> paises = new ArrayList<>();
        try (BufferedReader bf = new BufferedReader(new FileReader(PrincipalProyecto.filerutes + "paises.csv"))) {

@@ -18,11 +18,27 @@ import java.util.ArrayList;
  */
 public class Country implements Comparable<Country> {
 
+    /**
+     *
+     */
     private String nombre;
+
+    /**
+     *
+     */
     private int caso;
+
+    /**
+     *
+     */
     private int muerte;
 
-
+    /**
+     *
+     * @param nombre
+     * @param caso
+     * @param muerte
+     */
     public Country(String nombre, int caso, int muerte) {
         this.nombre = nombre;
         this.caso = caso;
@@ -30,6 +46,10 @@ public class Country implements Comparable<Country> {
    
     }
 
+    /**
+     *
+     * @return
+     */
     public static ArrayList<Country> cargarglobal() {
         ArrayList<Country> globales = new ArrayList<>();
         try (BufferedReader bf = new BufferedReader(new FileReader(PrincipalProyecto.filerutes + "globales.csv"))) {
@@ -53,26 +73,50 @@ public class Country implements Comparable<Country> {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     *
+     * @param nombre
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getCaso() {
         return caso;
     }
 
+    /**
+     *
+     * @param caso
+     */
     public void setCaso(int caso) {
         this.caso = caso;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getMuerte() {
         return muerte;
     }
 
+    /**
+     *
+     * @param muerte
+     */
     public void setMuerte(int muerte) {
         this.muerte = muerte;
     }

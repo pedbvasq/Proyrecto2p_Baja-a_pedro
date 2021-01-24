@@ -29,6 +29,8 @@ public class DatoGeneralController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -43,13 +45,29 @@ public class DatoGeneralController implements Initializable {
             
         }
     }
+
+    /**
+     *
+     */
     @FXML
     private Label txtcasos;
+
+    /**
+     *
+     */
     @FXML
     private Label txtmuertes;
+
+    /**
+     *
+     */
     @FXML
     private Button btConsultaPaises;
 
+    /**
+     *
+     * @param e
+     */
     @FXML
     void ConsultaPaises(ActionEvent e) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("VentanaPaisOrden.fxml"));
@@ -64,7 +82,7 @@ public class DatoGeneralController implements Initializable {
             
             
         } catch (IOException ex) {
-            ex.printStackTrace();
+       
         }
 
     }

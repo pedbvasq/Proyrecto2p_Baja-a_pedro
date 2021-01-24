@@ -18,8 +18,15 @@ import java.util.ArrayList;
  */
 public class Continente {
 
+    /**
+     *
+     */
     private String nombre;
 
+    /**
+     *
+     * @param nombre
+     */
     public Continente(String nombre) {
         this.nombre = nombre;
     }
@@ -29,16 +36,26 @@ public class Continente {
         return  nombre ;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     *
+     * @param nombre
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
     
-    
-
+    /**
+     *
+     * @return
+     */
     public static ArrayList<Continente> cargarContinente() {
        
         ArrayList<Continente> continentes = new ArrayList<>();
@@ -55,6 +72,7 @@ public class Continente {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+
         return continentes;
         
       

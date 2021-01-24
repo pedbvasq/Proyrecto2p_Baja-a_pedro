@@ -47,97 +47,243 @@ public class VentanaDashBoardController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         starTask();
-        comboConti.getItems().setAll(Continente.cargarContinente());
+        comboConti.getItems().addAll(Continente.cargarContinente());
 
     }
+
+    /**
+     *
+     */
     @FXML
     private VBox vboxCasos;
+
+    /**
+     *
+     */
     @FXML
     private VBox vboxMuerte;
+
+    /**
+     *
+     */
     @FXML
     private VBox vboxCasosDias;
+
+    /**
+     *
+     */
     @FXML
     private VBox vboxPoblacion;
+
+    /**
+     *
+     */
     @FXML
     private VBox vboxMuertePorDia;
+
+    /**
+     *
+     */
     @FXML
     private ComboBox<Continente> comboConti;
+
+    /**
+     *
+     */
     @FXML
     private ComboBox<Pais> comboPais;
+
+    /**
+     *
+     */
     @FXML
     private DatePicker fecha;
+
+    /**
+     *
+     */
     @FXML
     private Button consultar;
+
+    /**
+     *
+     */
     @FXML
     private VBox rootDash;
+
+    /**
+     *
+     */
     @FXML
     private Label timepoApp;
+
+    /**
+     *
+     */
     @FXML
     private Label txtcasos;
+
+    /**
+     *
+     */
     @FXML
     private Label casos;
+
+    /**
+     *
+     */
     @FXML
     private Label txtdias;
+
+    /**
+     *
+     */
     @FXML
     private Label dias;
+
+    /**
+     *
+     */
     @FXML
     private Label txtpoblacion;
+
+    /**
+     *
+     */
     @FXML
     private Label poblacion;
+
+    /**
+     *
+     */
     @FXML
     private Label txtmuertes;
+
+    /**
+     *
+     */
     @FXML
     private Label muertes;
+
+    /**
+     *
+     */
     @FXML
     private Label txtMuertedias;
+
+    /**
+     *
+     */
     @FXML
     private Label diasMuerte;
+
+    /**
+     *
+     */
     @FXML
     private Button btnCerrar;
+
+    /**
+     *
+     */
     @FXML
     private ImageView mapa;
+
+    /**
+     *
+     */
     private static String pob;
+
+    /**
+     *
+     */
     private static String vid;
+
+    /**
+     *
+     */
     private static String ed;
+
+    /**
+     *
+     */
     private static String den;
 
+    /**
+     *
+     * @param pob
+     */
     public static void setPob(String pob) {
         VentanaDashBoardController.pob = pob;
     }
 
+    /**
+     *
+     * @param vid
+     */
     public static void setVid(String vid) {
         VentanaDashBoardController.vid = vid;
     }
 
+    /**
+     *
+     * @param ed
+     */
     public static void setEd(String ed) {
         VentanaDashBoardController.ed = ed;
     }
 
+    /**
+     *
+     * @param den
+     */
     public static void setDen(String den) {
         VentanaDashBoardController.den = den;
     }
 
+    /**
+     *
+     * @return
+     */
     public static String getDen() {
         return den;
     }
 
+    /**
+     *
+     * @return
+     */
     public static String getPob() {
         return pob;
     }
 
+    /**
+     *
+     * @return
+     */
     public static String getVid() {
         return vid;
     }
 
+    /**
+     *
+     * @return
+     */
     public static String getEd() {
         return ed;
     }
 
+    /**
+     *
+     * @param e
+     */
     @FXML
     void consultarAccion(ActionEvent e) {
         LocalDate fechaS = fecha.getValue();
@@ -220,6 +366,10 @@ public class VentanaDashBoardController implements Initializable {
 
     }
 
+    /**
+     *
+     * @param e
+     */
     @FXML
     void continenteAccion(ActionEvent e) {
         Continente ct = comboConti.getValue();
@@ -235,6 +385,10 @@ public class VentanaDashBoardController implements Initializable {
 
     }
 
+    /**
+     *
+     * @param e
+     */
     @FXML
     void fechaConsulta(ActionEvent e) {
         fecha.setEditable(false);
@@ -243,11 +397,19 @@ public class VentanaDashBoardController implements Initializable {
 
     }
 
+    /**
+     *
+     * @param e
+     */
     @FXML
     void paisEleccion(ActionEvent e) {
 
     }
 
+    /**
+     *
+     * @param e
+     */
     @FXML
     void cerrar(ActionEvent e) {
         Stage s = (Stage) btnCerrar.getScene().getWindow();
@@ -255,6 +417,10 @@ public class VentanaDashBoardController implements Initializable {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public static ArrayList<String[]> datosCovid() {
         ArrayList<String[]> listaCovid = new ArrayList<>();
         try (BufferedReader bf = new BufferedReader(new FileReader(PrincipalProyecto.filerutes + "owid-covid-data_.csv"))) {
@@ -275,6 +441,9 @@ public class VentanaDashBoardController implements Initializable {
 
     }
 
+    /**
+     *
+     */
     public void starTask() {
         Thread contadorTiempo = new Thread(new Runnable() {
             @Override
@@ -289,6 +458,9 @@ public class VentanaDashBoardController implements Initializable {
 
     }
 
+    /**
+     *
+     */
     public void runTask() {
         int contador = 1;
         while (contador != 0) {
